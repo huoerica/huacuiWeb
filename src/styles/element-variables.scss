@@ -1,0 +1,116 @@
+/**
+* I think element-ui's default theme color is too light for long-term use.
+* So I modified the default color and you can modify it to your liking.
+**/
+
+/* theme color */
+$--color-primary: #fe3506;
+$--color-blue: #1F89E1;
+$--color-hover: #f9f9f9;
+
+$--button-font-weight: 400;
+
+$--color-text-regular: #131313;
+$--color-text-light: #939393;
+$--color-text-lighter: #C3C3C3;
+
+$--border-color-light: #e6ebf5;
+$--border-color-lighter: #EAEAEA;
+
+$--table-border:1px solid #dfe6ec;
+
+/**
+* media size
+**/
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+$container-sm: 750px;
+$container-md: 970px;
+$container-lg: 1170px;
+
+
+@mixin link-colors( $normal: $--color-text-regular, $hover: $--color-primary, $visited: $--color-text-light ) {
+  color: $normal;
+  cursor: pointer;
+  &:hover {
+    color: $hover;
+  }
+  &:visited {
+    color: $visited;
+  }
+}
+
+@mixin text-hide {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin text-ellipsis($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin title($lines:2, $fontSize:14px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 6px;
+  height: ($fontSize + 6px) * $lines;
+  margin: 0;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin description($lines:2, $fontSize:14px,$margin: 5px 0) {
+  font-size: $fontSize;
+  line-height: $fontSize + 6px;
+  height: ($fontSize + 6px) * $lines;
+  color: $--color-text-light;
+  margin: $margin;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin subscript($fontSize:12px,$lines: 1,$margin: 0) {
+  font-size: $fontSize;
+  line-height: $fontSize + 6px;
+  height: ($fontSize + 6px) * $lines;
+  color: $--color-text-lighter;
+  margin: $margin;
+}
+
+@mixin price($fontSize:14px,$margin: 0) {
+  font-size: $fontSize;
+  line-height: $fontSize + 6px;
+  color: $--color-primary;
+  margin: $margin;
+}
+
+@mixin priceOld($fontSize:12px,$margin: 0 0 0 5px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 6px;
+  color: $--color-text-lighter;
+  margin: $margin;
+  text-decoration: line-through;
+}
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  theme: $--color-primary;
+}

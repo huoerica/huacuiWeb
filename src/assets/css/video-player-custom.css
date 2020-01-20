@@ -1,0 +1,47 @@
+/**/
+.video-player,
+.video-js,
+.vjs-poster{
+    width: 100%;
+    background-color: rgba(230, 230, 230, 0.15);
+}
+.video-js .vjs-tech:focus{
+    outline: none;
+}
+
+.video-js .vjs-control{
+    -webkit-appearance: none;
+    outline: none;
+}
+.video-js .vjs-big-play-button{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    color: #ffffff;
+}
+
+.video-js:hover .vjs-big-play-button{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.video-js .vjs-big-play-button:hover,
+.video-js .vjs-big-play-button:focus{
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+.video-js .vjs-big-play-button .vjs-icon-placeholder,
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before{
+    display: inline-block;
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before{
+    font-size: 50px;
+}
+
+.video-js .vjs-duration, .vjs-no-flex .vjs-duration{
+    display: block;
+}
+
